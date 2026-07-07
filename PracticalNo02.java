@@ -1,26 +1,28 @@
 package practicalno.pkg02;
 
-interface Student {
-    void study();
-    void attendClass();
+abstract class Student {
+
+    abstract void study();
+
+    void attendClass() {
+        System.out.println("Student attends the class.");
+    }
 }
 
-class EngineeringStudent implements Student {
+class EngineeringStudent extends Student {
 
     @Override
-    public void study() {
-        System.out.println("BSc CS studies Java programming.");
-    }
-
-    @Override
-    public void attendClass() {
-        System.out.println("BSc CS student attends the class.");
+    void study() {
+        System.out.println("Engineering student studies Java programming.");
     }
 }
 
 public class PracticalNo02 {
+
     public static void main(String[] args) {
-        Student s = new EngineeringStudent();
+
+        EngineeringStudent s = new EngineeringStudent();
+
         s.study();
         s.attendClass();
     }
